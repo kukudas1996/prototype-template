@@ -42,4 +42,7 @@
   3. git push
   4. 완료 후 아래 링크 표시:
      - GitHub: 현재 프로젝트의 GitHub 레포 URL
-     - 팀원 공유: Vercel 배포 URL
+     - 팀원 공유:
+       - (Vercel URL)/v1
+       - (Vercel URL)/v2
+       - (존재하는 버전만 표시)
