@@ -163,12 +163,3 @@
   --font-caption2-line-height: 127.3%;
   --font-caption2-letter-spacing: 0.0311em;
 }
-
-input,
-input:focus,
-input:focus-visible,
-input:focus-within,
-input:active {
-  outline: none !important;
-  box-shadow: none !important;
-}

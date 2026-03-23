@@ -1,56 +1,29 @@
 import { useState, useEffect, useRef } from 'react'
 
-const styles = {
-  wrapper: {
-    position: 'relative',
-    width: '100%',
-    minWidth: 200,
-  },
-  field: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    height: 48,
-    padding: '0 16px',
-    borderRadius: 10,
-    border: '1px solid #EBEDF2',
-    backgroundColor: 'var(--semantic-bg-normal)',
-    fontFamily: 'var(--font-family)',
-    fontSize: 'var(--font-body1-size)',
-    lineHeight: '24px',
-    cursor: 'pointer',
-    width: '100%',
-    boxSizing: 'border-box',
-  },
-  label: {
-    color: '#8A92A1',
-  },
-  labelFilled: {
-    color: 'var(--semantic-label-normal)',
-  },
-  labelDisabled: {
-    color: '#C1C8D6',
-  },
-  dropdown: {
-    position: 'absolute',
-    top: 52,
-    left: 0,
-    right: 0,
-    backgroundColor: 'var(--semantic-bg-normal)',
-    border: '1px solid #EBEDF2',
-    borderRadius: 10,
-    boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.08)',
-    zIndex: 10,
-    overflow: 'hidden',
-  },
-  option: {
-    padding: '12px 16px',
-    fontFamily: 'var(--font-family)',
-    fontSize: 'var(--font-body1-size)',
-    lineHeight: '24px',
-    color: 'var(--semantic-label-normal)',
-    cursor: 'pointer',
-  },
+const baseField = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  height: 48,
+  padding: '0 16px',
+  borderRadius: 10,
+  borderWidth: 1,
+  borderStyle: 'solid',
+  borderColor: '#E1E4EB',
+  backgroundColor: 'var(--semantic-bg-normal)',
+  fontFamily: 'var(--font-family)',
+  fontSize: 'var(--font-body1-size)',
+  lineHeight: '24px',
+  cursor: 'pointer',
+  width: '100%',
+  boxSizing: 'border-box',
+  outline: 0,
+  outlineStyle: 'none',
+  WebkitAppearance: 'none',
+  MozAppearance: 'none',
+  appearance: 'none',
+  WebkitTapHighlightColor: 'transparent',
+  userSelect: 'none',
 }
 
 function Chevron({ up }) {
@@ -83,35 +56,59 @@ export default function SelectField({
     return () => document.removeEventListener('pointerdown', handleClick)
   }, [open])
 
+  let borderColor = '#E1E4EB'
+  if (open) borderColor = 'var(--color-primary-500)'
+  if (disabled) borderColor = '#E1E4EB'
+
   const fieldStyle = {
-    ...styles.field,
-    ...(open ? { borderColor: 'var(--color-primary-500)' } : {}),
-    ...(disabled ? { backgroundColor: '#F5F6FA', borderColor: '#EBEDF2', cursor: 'not-allowed' } : {}),
+    ...baseField,
+    borderColor,
+    ...(disabled ? { backgroundColor: '#F5F6FA', cursor: 'not-allowed' } : {}),
   }
 
-  const labelStyle = disabled
-    ? styles.labelDisabled
+  const labelColor = disabled
+    ? '#C1C8D6'
     : selected
-      ? styles.labelFilled
-      : styles.label
+      ? 'var(--semantic-label-normal)'
+      : '#8A92A1'
 
   return (
-    <div style={styles.wrapper} ref={ref}>
+    <div style={{ position: 'relative', width: '100%' }} ref={ref}>
       <div
+        role="button"
+        tabIndex={-1}
         style={fieldStyle}
         onClick={() => { if (!disabled) setOpen(!open) }}
       >
-        <span style={labelStyle}>{selected ? selected.label : placeholder}</span>
+        <span style={{ color: labelColor }}>{selected ? selected.label : placeholder}</span>
         <Chevron up={open} />
       </div>
       {open && (
-        <div style={styles.dropdown}>
+        <div style={{
+          position: 'absolute',
+          top: 52,
+          left: 0,
+          right: 0,
+          backgroundColor: 'var(--semantic-bg-normal)',
+          borderWidth: 1,
+          borderStyle: 'solid',
+          borderColor: '#E1E4EB',
+          borderRadius: 10,
+          boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.08)',
+          zIndex: 10,
+          overflow: 'hidden',
+        }}>
           {options.map((opt) => (
             <div
               key={opt.value}
               style={{
-                ...styles.option,
-                ...(opt.value === value ? { color: 'var(--color-primary-500)', fontWeight: 'var(--font-weight-bold)' } : {}),
+                padding: '12px 16px',
+                fontFamily: 'var(--font-family)',
+                fontSize: 'var(--font-body1-size)',
+                lineHeight: '24px',
+                color: opt.value === value ? 'var(--color-primary-500)' : 'var(--semantic-label-normal)',
+                fontWeight: opt.value === value ? 'var(--font-weight-bold)' : 'normal',
+                cursor: 'pointer',
               }}
               onClick={() => { onChange?.(opt.value); setOpen(false) }}
               onPointerEnter={(e) => e.currentTarget.style.backgroundColor = '#F5F6FA'}

@@ -13,6 +13,7 @@
 ## 디자인
 - tokens.css에 있는 토큰은 쓴다. 없는 값은 하드코딩한다.
 - tokens.css에 새로운 토큰을 임의로 추가하지 않는다.
+- 컴포넌트 수정 과정에서 tokens.css는 절대 건들지 않는다.
 - components/에 있는 공용 컴포넌트는 재활용한다.
 - components/에 새로운 컴포넌트를 임의로 추가하지 않는다.
 - 없는 UI는 화면 코드 안에서 직접 만든다.
@@ -34,7 +35,9 @@
 1. git add .
 2. git commit -m "update"
 3. git push
-이 3단계를 순서대로 실행. GitHub에 올리면 Vercel은 자동 배포됨.
+4. 완료 후 아래 링크 표시:
+   - GitHub: 현재 프로젝트의 GitHub 레포 URL
+   - 팀원 공유: Vercel 배포 URL
 
 ## 새 화면 만들 때
 1. 피그마 URL 받으면 구조 파악
