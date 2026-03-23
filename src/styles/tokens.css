@@ -1,0 +1,174 @@
+:root {
+  /* ==================== */
+  /*  Color - Palette     */
+  /* ==================== */
+
+  /* Cool Neutral */
+  --color-coolNeutral-5: #0F0F10;
+  --color-coolNeutral-7: #141415;
+  --color-coolNeutral-10: #171719;
+  --color-coolNeutral-15: #1B1C1E;
+  --color-coolNeutral-17: #212225;
+  --color-coolNeutral-20: #292A2D;
+  --color-coolNeutral-22: #2E2F33;
+  --color-coolNeutral-25: #37383C;
+  --color-coolNeutral-30: #46474C;
+  --color-coolNeutral-40: #5A5C63;
+  --color-coolNeutral-50: #70737C;
+  --color-coolNeutral-60: #878A93;
+  --color-coolNeutral-70: #989BA2;
+  --color-coolNeutral-80: #AEB0B6;
+  --color-coolNeutral-90: #C2C4C8;
+  --color-coolNeutral-95: #DBDCDF;
+  --color-coolNeutral-96: #E1E2E4;
+  --color-coolNeutral-97: #EAEBEC;
+  --color-coolNeutral-98: #F4F4F5;
+  --color-coolNeutral-99: #F7F7F8;
+  --color-coolNeutral-100: #FFFFFF;
+
+  /* Primary Palette */
+  --color-primary-050: #E8F0FF;
+  --color-primary-100: #D8E7FE;
+  --color-primary-200: #B0CFFD;
+  --color-primary-300: #88B7FC;
+  --color-primary-400: #65A2FC;
+  --color-primary-500: #4487FF;
+  --color-primary-600: #1767E8;
+  --color-primary-700: #1652B8;
+  --color-primary-800: #0C357A;
+  --color-primary-900: #071733;
+
+  /* Red */
+  --color-red-40: #E52222;
+  --color-red-50: #FF4242;
+  --color-red-60: #FF6363;
+  --color-red-80: #FFB5B5;
+  --color-red-90: #FED5D5;
+  --color-red-95: #FEECEC;
+
+  /* Green */
+  --color-green-40: #009632;
+  --color-green-50: #00BF40;
+  --color-green-60: #1ED45A;
+  --color-green-80: #7DF5A5;
+  --color-green-95: #D9FFE6;
+
+  /* ==================== */
+  /*  Color - Semantic    */
+  /* ==================== */
+
+  --semantic-primary-normal: #4487FF;
+  --semantic-primary-strong: #1767E8;
+  --semantic-primary-heavy: #0C357A;
+
+  --semantic-label-normal: #171719;
+  --semantic-label-strong: #000000;
+  --semantic-label-neutral: #2E2F33E0;
+  --semantic-label-alternative: #37383C9C;
+  --semantic-label-assistive: #37383C47;
+  --semantic-label-disable: #37383C29;
+
+  --semantic-bg-normal: #FFFFFF;
+  --semantic-bg-alternative: #F7F7F8;
+  --semantic-bg-elevated: #FFFFFF;
+
+  --semantic-line-normal: #E1E2E4;
+  --semantic-line-neutral: #EAEBEC;
+  --semantic-line-alternative: #F4F4F5;
+  --semantic-line-strong: #AEB0B6;
+
+  --semantic-fill-normal: #70737C14;
+  --semantic-fill-strong: #70737C29;
+
+  --semantic-status-positive: #00BF40;
+  --semantic-status-cautionary: #FF9200;
+  --semantic-status-negative: #FF4242;
+
+  --semantic-static-white: #FFFFFF;
+  --semantic-static-black: #000000;
+
+  /* ==================== */
+  /*  Typography          */
+  /* ==================== */
+
+  --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --font-weight-bold: 600;
+  --font-weight-medium: 500;
+
+  /* Display */
+  --font-display1-size: 56px;
+  --font-display1-line-height: 128.6%;
+  --font-display1-letter-spacing: -0.0319em;
+
+  --font-display2-size: 40px;
+  --font-display2-line-height: 130%;
+  --font-display2-letter-spacing: -0.0282em;
+
+  /* Title */
+  --font-title1-size: 36px;
+  --font-title1-line-height: 133.4%;
+  --font-title1-letter-spacing: -0.027em;
+
+  --font-title2-size: 28px;
+  --font-title2-line-height: 135.8%;
+  --font-title2-letter-spacing: -0.0236em;
+
+  --font-title3-size: 24px;
+  --font-title3-line-height: 133.4%;
+  --font-title3-letter-spacing: -0.023em;
+
+  /* Heading */
+  --font-heading1-size: 22px;
+  --font-heading1-line-height: 136.4%;
+  --font-heading1-letter-spacing: -0.0194em;
+
+  --font-heading2-size: 20px;
+  --font-heading2-line-height: 140%;
+  --font-heading2-letter-spacing: -0.012em;
+
+  /* Headline */
+  --font-headline1-size: 18px;
+  --font-headline1-line-height: 144.5%;
+  --font-headline1-letter-spacing: -0.0002em;
+
+  --font-headline2-size: 17px;
+  --font-headline2-line-height: 141.2%;
+  --font-headline2-letter-spacing: 0em;
+
+  /* Body */
+  --font-body1-size: 16px;
+  --font-body1-line-height: 150%;
+  --font-body1-letter-spacing: 0.0057em;
+
+  --font-body2-size: 15px;
+  --font-body2-line-height: 146.7%;
+  --font-body2-letter-spacing: 0.0096em;
+
+  /* Label */
+  --font-label1-size: 14px;
+  --font-label1-line-height: 142.9%;
+  --font-label1-letter-spacing: 0.0145em;
+
+  --font-label2-size: 13px;
+  --font-label2-line-height: 138.5%;
+  --font-label2-letter-spacing: 0.0194em;
+
+  /* Caption */
+  --font-caption1-size: 12px;
+  --font-caption1-line-height: 133.4%;
+  --font-caption1-letter-spacing: 0.0252em;
+
+  --font-caption2-size: 11px;
+  --font-caption2-line-height: 127.3%;
+  --font-caption2-letter-spacing: 0.0311em;
+}
+
+input,
+input:focus,
+input:focus-visible,
+input:focus-within,
+input:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
