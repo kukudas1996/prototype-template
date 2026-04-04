@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add . && git commit -m \"update\" && git push)"
+      "Bash(git add . && git commit -m \"update\" && git push)",
+      "Bash(git push)",
+      "Bash(git remote get-url origin)"
     ]
   }
 }
