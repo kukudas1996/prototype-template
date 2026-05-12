@@ -43,7 +43,12 @@
 - 컴포넌트 수정 과정에서 tokens.css는 절대 건들지 않는다.
 - 폰트는 Pretendard만 사용한다.
 - 모바일 화면 좌우 패딩은 16px 고정.
-- 모바일 기준 너비: 375px / 웹 기준 너비: 1440px
+- 모바일 기준 너비: 375px
+- 모바일 기준 높이: 812px (iPhone X/11/12/13 기준)
+- OS: iOS 기반
+- Safe Area 상단 44px (status bar), 하단 34px (home indicator) 반드시 대응
+- 스크롤은 momentum scroll 적용 (-webkit-overflow-scrolling: touch)
+- 탭바, 내비게이션바 등 시스템 UI 높이 기준도 iOS 기준으로 적용
 
 ---
 
